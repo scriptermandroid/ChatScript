@@ -7,15 +7,15 @@ local textChannel = TextChatService:WaitForChild("TextChannels"):WaitForChild("R
 
 local function replace_char_table(str, index, replacement)
 	local t = {}
-	-- Split string into an array of characters
+	
 	for i = 1, #str do
 		t[i] = str:sub(i, i)
 	end
 
-	-- Replace the character at the target index
+	
 	t[index] = replacement
 
-	-- Rebuild the string efficiently
+	
 	return table.concat(t)
 end
 
@@ -32,12 +32,12 @@ end
 	end
 	return newstring
 end]]
--- Locate the default general chat channel
 
--- Define the message you want the player to send
+
+
 local message = "Hello, world!"
 
--- Force the local player to send the message
+
 textbox.FocusLost:Connect(function(enter, input)
 	if enter then
 		print('enter pressed')
@@ -53,7 +53,6 @@ end)
 local TextChatService = game:GetService("TextChatService")
 local Players = game:GetService("Players")
 
--- Define the target player who gets partial bolding capabilities
 local TARGET_USER_ID = 792994343 
 
 TextChatService.OnIncomingMessage = function(message: TextChatMessage)
